@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{092CB678-DF4A-43CF-AA2C-9DFB97BF3C7B}</ProjectGuid>
+    <ProjectGuid>{FD501F8A-C3CE-4117-AA48-431FD58BBFC2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CommonSandbox</RootNamespace>
-    <AssemblyName>CommonSandbox</AssemblyName>
+    <RootNamespace>SortedSetApp</RootNamespace>
+    <AssemblyName>SortedSetApp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
