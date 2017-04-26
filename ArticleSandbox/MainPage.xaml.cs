@@ -28,6 +28,13 @@ namespace ArticleSandbox
         {
             this.InitializeComponent();
             this.DataContext = new MainPageViewModel();
+
+            TextBoxExtension.ValidationFailed += TextBoxExtension_ValidationFailed;
+        }
+
+        private void TextBoxExtension_ValidationFailed(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

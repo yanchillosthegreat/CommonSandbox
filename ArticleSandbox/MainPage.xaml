@@ -4,6 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:ap="using:ArticleSandbox.Controls.AP">
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBox x:Name="textbox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="textbox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="200" ap:TextBoxExtension.Regex="True"/>
     </Grid>
 </Page>

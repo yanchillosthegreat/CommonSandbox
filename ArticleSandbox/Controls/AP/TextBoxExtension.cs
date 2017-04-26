@@ -13,18 +13,19 @@ namespace ArticleSandbox.Controls.AP
 {
     public class TextBoxExtension
     {
-        public static string GetRegex(DependencyObject obj)
+        public static bool GetRegex(DependencyObject obj)
         {
-            return (string)obj.GetValue(RegexProperty);
+            return (bool)obj.GetValue(RegexProperty);
         }
 
-        public static void SetRegex(DependencyObject obj, string value)
+        public static void SetRegex(DependencyObject obj, bool value)
         {
             obj.SetValue(RegexProperty, value);
         }
 
         public static readonly DependencyProperty RegexProperty = DependencyProperty.RegisterAttached(
-            "Regex", typeof(string), typeof(TextBoxExtension), new PropertyMetadata(string.Empty, RegexChanged));
+            "Regex", typeof(bool), typeof(TextBoxExtension), new PropertyMetadata(false, RegexChanged));
+
 
         private static void RegexChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
@@ -33,9 +34,9 @@ namespace ArticleSandbox.Controls.AP
             if (textBox == null)
                 return;
 
-            var regex = e.NewValue as string;
+            var regex = (bool)e.NewValue;
 
-            if (string.IsNullOrEmpty(regex))
+            if (!regex)
             {
                 textBox.TextChanged -= TextBox_TextChanged;
             }
@@ -51,10 +52,11 @@ namespace ArticleSandbox.Controls.AP
 
             if (!Regex.IsMatch(textBox.Text, "^[a-zA-Z]*$"))
             {
-
+                ValidationFailed?.Invoke(textBox, EventArgs.Empty);
             }
         }
 
+        public static event EventHandler ValidationFailed;
         //private static TextChangedEventHandler handler = (s, e) =>
         //{
         //    TextBox textBox = s as TextBox;
