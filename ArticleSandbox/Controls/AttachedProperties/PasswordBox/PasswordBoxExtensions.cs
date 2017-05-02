@@ -22,7 +22,7 @@ namespace ArticleSandbox.Controls.AttachedProperties
         }
 
         public static readonly DependencyProperty RegexPatternProperty =
-            DependencyProperty.RegisterAttached("RegexPattern", typeof(string), typeof(TextBoxExtensions), new PropertyMetadata(string.Empty, OnRegexPatternChanged));
+            DependencyProperty.RegisterAttached("RegexPattern", typeof(string), typeof(PasswordBoxExtensions), new PropertyMetadata(string.Empty, OnRegexPatternChanged));
 
         public static bool GetIsValid(DependencyObject obj)
         {

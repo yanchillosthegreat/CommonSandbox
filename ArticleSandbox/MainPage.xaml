@@ -7,9 +7,9 @@
     xmlns:i="using:Microsoft.Xaml.Interactivity">
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-        <views:IndecentRegistrationView HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"/>
+        <!--<views:IndecentRegistrationView HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"/>-->
 
-        <!--<views:RegistrationView HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"/>-->
+        <views:RegistrationView HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"/>
         
         <!--<FlipView HorizontalAlignment="Center" VerticalAlignment="Center">
             <FlipView.Items>
