@@ -22,27 +22,27 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Registration Form" HorizontalAlignment="Stretch" TextAlignment="Center"/>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="Registration Form" 
+                   HorizontalAlignment="Stretch" TextAlignment="Center"/>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="User Name" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="Birthdate" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="3" Grid.Column="0" Text="Email" VerticalAlignment="Center"/>
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Password" VerticalAlignment="Center"/>
-        <TextBox Grid.Row="1" Grid.Column="1" 
+        <TextBox Grid.Row="1" Grid.Column="1" IsSpellCheckEnabled="False"
                  ap:TextBoxExtensions.RegexPattern="." 
-                 ap:TextBoxExtensions.IsValid="{x:Bind ViewModel.IsUserNameValid, Mode=TwoWay}"
-                 IsSpellCheckEnabled="False"/>
-        <TextBox Grid.Row="2" Grid.Column="1"
+                 ap:TextBoxExtensions.IsValid="{x:Bind ViewModel.IsUserNameValid, Mode=TwoWay}"/>
+        <TextBox Grid.Row="2" Grid.Column="1" 
                  ap:TextBoxExtensions.RegexPattern="^\d{2}\.\d{2}\.\d{4}$" 
                  ap:TextBoxExtensions.IsValid="{x:Bind ViewModel.IsBirthdateValid, Mode=TwoWay}"/>
-        <TextBox Grid.Row="3" Grid.Column="1"
+        <TextBox Grid.Row="3" Grid.Column="1" IsSpellCheckEnabled="False"
                  ap:TextBoxExtensions.RegexPattern="^([\w\.\-]+)@([\w\-]+)((\.(\w){2,4})+)$" 
-                 ap:TextBoxExtensions.IsValid="{x:Bind ViewModel.IsEmailValid, Mode=TwoWay}"
-                 IsSpellCheckEnabled="False"/>
+                 ap:TextBoxExtensions.IsValid="{x:Bind ViewModel.IsEmailValid, Mode=TwoWay}" />
         <PasswordBox Grid.Row="4" Grid.Column="1"
                  ap:PasswordBoxExtensions.RegexPattern="." 
                  ap:PasswordBoxExtensions.IsValid="{x:Bind ViewModel.IsPasswordValid, Mode=TwoWay}" />
-        <Button Grid.Row="5" Grid.ColumnSpan="2" Content="Register" HorizontalAlignment="Stretch" IsEnabled="{x:Bind ViewModel.IsRegisterButtonEnabled, Mode=OneWay}"/>
+        <Button Grid.Row="5" Grid.ColumnSpan="2" Content="Register" HorizontalAlignment="Stretch" 
+                IsEnabled="{x:Bind ViewModel.IsRegisterButtonEnabled, Mode=OneWay}"/>
     </Grid>
 </UserControl>

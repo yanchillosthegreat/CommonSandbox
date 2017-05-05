@@ -9,9 +9,20 @@ namespace ArticleSandbox.ViewModels
 {
     public class MainPageViewModel : BindableBase
     {
+        private int counter;
+        public int Counter
+        {
+            get { return counter; }
+            set { Set(ref counter, value); }
+        }
+
+        public RelayCommand ButtonCommand { get; private set; }
+
         public MainPageViewModel()
         {
-
+            ButtonCommand = new RelayCommand(
+                () => Counter++
+                );
         }
     }
 }

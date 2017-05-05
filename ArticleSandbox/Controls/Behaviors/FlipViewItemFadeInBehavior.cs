@@ -10,7 +10,7 @@ using Windows.UI.Xaml.Media.Animation;
 
 namespace ArticleSandbox.Controls.Behaviors
 {
-    public class FlipViewItemZoomOutBehavior : Behavior<FlipView>
+    public class FlipViewItemFadeInBehavior : Behavior<FlipView>
     {
         public double Duration { get; set; }
 

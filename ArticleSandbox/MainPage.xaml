@@ -9,8 +9,8 @@
 
         <!--<views:IndecentRegistrationView HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"/>-->
 
-        <views:RegistrationView HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"/>
-        
+        <!--<views:RegistrationView HorizontalAlignment="Center" VerticalAlignment="Center" Width="350"/>-->
+
         <!--<FlipView HorizontalAlignment="Center" VerticalAlignment="Center">
             <FlipView.Items>
                 <Rectangle Fill="Red" Width="200" Height="100"/>
@@ -18,8 +18,16 @@
                 <Rectangle Fill="Blue" Width="200" Height="100"/>
             </FlipView.Items>
             <i:Interaction.Behaviors>
-                <b:FlipViewItemZoomOutBehavior Duration="2"/>
+                <b:FlipViewItemFadeInBehavior Duration="2"/>
             </i:Interaction.Behaviors>
         </FlipView>-->
+
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{x:Bind ViewModel.Counter, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Grid.Row="1" Command="{x:Bind ViewModel.ButtonCommand}" Content="Press Me" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
     </Grid>
 </Page>

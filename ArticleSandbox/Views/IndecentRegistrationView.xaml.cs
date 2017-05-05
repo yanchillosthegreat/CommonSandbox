@@ -72,11 +72,11 @@ namespace ArticleSandbox.Views
         {
             if (isUsernameValid && isBirthdateValid && isEmailValid && isPasswordValid)
             {
-                registerButton.IsEnabled = true;
+                RegisterButton.IsEnabled = true;
             }
             else
             {
-                registerButton.IsEnabled = false;
+                RegisterButton.IsEnabled = false;
             }
         }
     }

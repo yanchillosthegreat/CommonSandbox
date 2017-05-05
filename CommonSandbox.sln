@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArticleSandbox", "ArticleSandbox\ArticleSandbox.csproj", "{B491B732-EA12-4B2E-9937-FC76DF806DBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonSandbox", "CommonSandbox\CommonSandbox.csproj", "{D0D07F8E-9671-4F48-A624-1CA160ED735C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,24 @@ Global
 		{B491B732-EA12-4B2E-9937-FC76DF806DBD}.Release|x86.ActiveCfg = Release|x86
 		{B491B732-EA12-4B2E-9937-FC76DF806DBD}.Release|x86.Build.0 = Release|x86
 		{B491B732-EA12-4B2E-9937-FC76DF806DBD}.Release|x86.Deploy.0 = Release|x86
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|ARM.ActiveCfg = Debug|ARM
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|ARM.Build.0 = Debug|ARM
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|ARM.Deploy.0 = Debug|ARM
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|x64.ActiveCfg = Debug|x64
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|x64.Build.0 = Debug|x64
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|x64.Deploy.0 = Debug|x64
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|x86.ActiveCfg = Debug|x86
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|x86.Build.0 = Debug|x86
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Debug|x86.Deploy.0 = Debug|x86
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|ARM.ActiveCfg = Release|ARM
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|ARM.Build.0 = Release|ARM
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|ARM.Deploy.0 = Release|ARM
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|x64.ActiveCfg = Release|x64
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|x64.Build.0 = Release|x64
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|x64.Deploy.0 = Release|x64
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|x86.ActiveCfg = Release|x86
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|x86.Build.0 = Release|x86
+		{D0D07F8E-9671-4F48-A624-1CA160ED735C}.Release|x86.Deploy.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
