@@ -1,0 +1,8 @@
+﻿<UserControl
+    x:Class="SharedViewModelApp.Views.ParentView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid>
+        <ContentControl x:Name="contentControl" DataContext="{x:Bind ViewModel}"/>
+    </Grid>
+</UserControl>

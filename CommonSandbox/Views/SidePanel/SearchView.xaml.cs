@@ -1,5 +1,4 @@
 ﻿using CommonSandbox.Services;
-using CommonSandbox.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,28 +14,23 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
 
-namespace CommonSandbox
+namespace CommonSandbox.Views
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class SearchView : UserControl
     {
         private SidePanelService sidePanelService;
 
-        public MainPage()
+        public SearchView()
         {
             this.InitializeComponent();
             sidePanelService = SidePanelService.Instance;
-            sidePanelService.ViewChanged += SidePanelService_ViewChanged;
-            sidePanelService.SetView(SidePanelService.SidePanelViewType.Search);
         }
 
-        private void SidePanelService_ViewChanged(object sender, SidePanelService.SidePanelViewChangedArgs e)
+        private void Button_Tapped(object sender, TappedRoutedEventArgs e)
         {
-            clientPanel.Content = e.View;
+            sidePanelService.SetView(SidePanelService.SidePanelViewType.Registration);
         }
     }
 }

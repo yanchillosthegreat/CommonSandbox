@@ -25,22 +25,12 @@
             </i:Interaction.Behaviors>
         </views:ClientPanelView>-->
 
-        <SplitView IsPaneOpen="True"
-           DisplayMode="Inline"
-           OpenPaneLength="300" CompactPaneLength="100">
-            <SplitView.Pane>
-                <TextBlock Text="Pane"
-                   FontSize="24"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-            </SplitView.Pane>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-            <Grid>
-                <TextBlock Text="Content"
-                   FontSize="24"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-            </Grid>
-        </SplitView>
+        <ContentControl x:Name="clientPanel" Width="300" HorizontalAlignment="Left" VerticalAlignment="Stretch" 
+                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
     </Grid>
 </Page>
