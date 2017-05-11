@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonSandbox.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -11,6 +12,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
 // The User Control item template is documented at https://go.microsoft.com/fwlink/?LinkId=234236
@@ -19,9 +21,22 @@ namespace CommonSandbox.Views
 {
     public sealed partial class RegistrationView : UserControl
     {
+        public SidePanelViewModel ViewModel { get; private set; }
+
         public RegistrationView()
         {
             this.InitializeComponent();
+            this.DataContextChanged += RegistrationView_DataContextChanged;
+        }
+
+        private void RegistrationView_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
+        {
+            ViewModel = args.NewValue as SidePanelViewModel;
+        }
+
+        private void Buton_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            ViewModel.SetView(SidePanelViewModel.SidePanelViewType.Search);
         }
     }
 }

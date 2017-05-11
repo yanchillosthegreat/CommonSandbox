@@ -12,12 +12,12 @@ namespace CommonSandbox.ViewModel
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void RaisePropertyChanged([CallerMemberName]string propertyName = null)
+        protected void RaisePropertyChanged([CallerMemberName]string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)
+        protected void Set<T>(ref T storage, T value, [CallerMemberName]string propertyName = null)
         {
             if (!Equals(storage, value))
             {

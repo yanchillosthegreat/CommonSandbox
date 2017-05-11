@@ -2,6 +2,5 @@
     x:Class="CommonSandbox.Views.SidePanel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <ContentControl x:Name="clientPanel" Width="300" HorizontalAlignment="Left" VerticalAlignment="Stretch" 
-                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+    <ContentControl x:Name="contentControl" DataContext="{x:Bind ViewModel}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" MinWidth="300" MaxWidth="600"/>
 </UserControl>

@@ -30,7 +30,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <ContentControl x:Name="clientPanel" Width="300" HorizontalAlignment="Left" VerticalAlignment="Stretch" 
-                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>
+        <!--<ContentControl x:Name="clientPanel" Width="300" HorizontalAlignment="Left" VerticalAlignment="Stretch" 
+                        HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"/>-->
+
+        <views:SidePanel />
     </Grid>
 </Page>

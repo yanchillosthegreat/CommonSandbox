@@ -1,5 +1,4 @@
-﻿using CommonSandbox.Services;
-using CommonSandbox.Views;
+﻿using CommonSandbox.Views;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,19 +23,9 @@ namespace CommonSandbox
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private SidePanelService sidePanelService;
-
         public MainPage()
         {
             this.InitializeComponent();
-            sidePanelService = SidePanelService.Instance;
-            sidePanelService.ViewChanged += SidePanelService_ViewChanged;
-            sidePanelService.SetView(SidePanelService.SidePanelViewType.Search);
-        }
-
-        private void SidePanelService_ViewChanged(object sender, SidePanelService.SidePanelViewChangedArgs e)
-        {
-            clientPanel.Content = e.View;
         }
     }
 }

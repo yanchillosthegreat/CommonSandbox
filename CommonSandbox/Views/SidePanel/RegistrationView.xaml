@@ -2,10 +2,10 @@
     x:Class="CommonSandbox.Views.RegistrationView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    <Grid Background="LightGray">
+    <Grid Background="LightGray" HorizontalAlignment="Stretch">
         <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock Text="Registration" FontSize="24" HorizontalAlignment="Center"/>
-            <!--<Button HorizontalAlignment="Center" Content="Registration"/>-->
+            <Button HorizontalAlignment="Center" Content="Registration" Tapped="Buton_Tapped"/>
         </StackPanel>
     </Grid>
 </UserControl>
