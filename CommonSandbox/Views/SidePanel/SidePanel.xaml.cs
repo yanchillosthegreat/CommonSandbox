@@ -83,7 +83,17 @@ namespace CommonSandbox.Views
         {
             if (e.Cumulative.Translation.X > -(contentControl.MaxWidth / 2))
             {
-                this.Width = contentControl.MaxWidth;
+                Storyboard sb = new Storyboard();
+                DoubleAnimation da = new DoubleAnimation
+                {
+                    Duration = new Duration(TimeSpan.FromSeconds(0.15)),
+                    EnableDependentAnimation = true
+                };
+                da.To = contentControl.MaxWidth;
+                Storyboard.SetTargetProperty(da, nameof(Width));
+                Storyboard.SetTarget(da, this);
+                sb.Children.Add(da);
+                sb.Begin();
             }
         }
 
@@ -113,10 +123,7 @@ namespace CommonSandbox.Views
 
         private void ContentControl_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
         {
-            if (e.Cumulative.Translation.X < -50)
-            {
-                this.Width += e.Delta.Translation.X;
-            }
+            this.Width += e.Delta.Translation.X;
 
             if (e.Cumulative.Translation.X < -(contentControl.MaxWidth / 2) || e.Delta.Translation.X < -5)
             {
