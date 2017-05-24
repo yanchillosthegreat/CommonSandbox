@@ -26,6 +26,23 @@ namespace CommonSandbox
         public MainPage()
         {
             this.InitializeComponent();
+
+            double width = Window.Current.Bounds.Width;
+            double height = Window.Current.Bounds.Height;
+            grid.Width = width;
+            grid.Height = height;
+
+            webView.Navigate(new Uri(@"http://tehnosila.ru"));
+        }
+
+        private void ShowPopupOffsetClicked(object sender, RoutedEventArgs e)
+        {
+            if (!StandardPopup.IsOpen) { StandardPopup.IsOpen = true; }
+        }
+
+        private void ClosePopupClicked(object sender, RoutedEventArgs e)
+        {
+            if (StandardPopup.IsOpen) { StandardPopup.IsOpen = false; }
         }
     }
 }

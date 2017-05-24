@@ -8,126 +8,75 @@
     xmlns:i="using:Microsoft.Xaml.Interactivity">
 
     <Page.Resources>
-        <Style x:Key="myButtonStyle" TargetType="Button">
-            <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}" />
-            <Setter Property="Foreground" Value="{ThemeResource SystemControlForegroundBaseHighBrush}"/>
-            <Setter Property="BorderBrush" Value="{ThemeResource SystemControlForegroundTransparentBrush}" />
-            <Setter Property="BorderThickness" Value="{ThemeResource ButtonBorderThemeThickness}" />
-            <Setter Property="Padding" Value="8,4,8,4" />
-            <Setter Property="HorizontalAlignment" Value="Left" />
-            <Setter Property="VerticalAlignment" Value="Center" />
-            <Setter Property="FontFamily" Value="{ThemeResource ContentControlThemeFontFamily}" />
-            <Setter Property="FontWeight" Value="Normal" />
-            <Setter Property="FontSize" Value="{ThemeResource ControlContentThemeFontSize}" />
-            <Setter Property="UseSystemFocusVisuals" Value="True" />
+        <Style TargetType="FlyoutPresenter" x:Key="abc">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="IsTabStop" Value="False"/>
+            <Setter Property="Background" Value="{ThemeResource SystemControlBackgroundChromeMediumLowBrush}"/>
+            <Setter Property="BorderBrush" Value="{ThemeResource SystemControlForegroundChromeHighBrush}"/>
+            <Setter Property="BorderThickness" Value="{ThemeResource FlyoutBorderThemeThickness}"/>
+            <Setter Property="Padding" Value="{ThemeResource FlyoutContentThemePadding}"/>
+            <Setter Property="MinWidth" Value="{ThemeResource FlyoutThemeMinWidth}"/>
+            <Setter Property="MaxWidth" Value="2000"/>
+            <Setter Property="MinHeight" Value="{ThemeResource FlyoutThemeMinHeight}"/>
+            <Setter Property="MaxHeight" Value="2000"/>
+            <Setter Property="ScrollViewer.HorizontalScrollMode" Value="Auto" />
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.VerticalScrollMode" Value="Auto" />
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+            <Setter Property="ScrollViewer.ZoomMode" Value="Disabled" />
             <Setter Property="Template">
                 <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Grid x:Name="RootGrid" Background="{TemplateBinding Background}">
-                            <VisualStateManager.VisualStateGroups>
-                                <VisualStateGroup x:Name="CommonStates">
-                                    <VisualState x:Name="Normal">
-                                        <Storyboard>
-                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="PointerOver">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
-                                                   Storyboard.TargetProperty="BorderBrush">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseMediumLowBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
-                                                   Storyboard.TargetProperty="Foreground">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseHighBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <PointerUpThemeAnimation Storyboard.TargetName="RootGrid" />
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Pressed">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid"
-                                                   Storyboard.TargetProperty="Background">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlBackgroundBaseMediumLowBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
-                                                   Storyboard.TargetProperty="BorderBrush">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightTransparentBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
-                                                   Storyboard.TargetProperty="Foreground">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlHighlightBaseHighBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <PointerDownThemeAnimation Storyboard.TargetName="RootGrid" />
-                                        </Storyboard>
-                                    </VisualState>
-                                    <VisualState x:Name="Disabled">
-                                        <Storyboard>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="RootGrid"
-                                                   Storyboard.TargetProperty="Background">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlBackgroundBaseLowBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
-                                                   Storyboard.TargetProperty="Foreground">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledBaseMediumLowBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
-                                                   Storyboard.TargetProperty="BorderBrush">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="{ThemeResource SystemControlDisabledTransparentBrush}" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ContentPresenter"
-                                                   Storyboard.TargetProperty="Visibility">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="Collapsed" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="ProgressRing"
-                                                   Storyboard.TargetProperty="IsActive">
-                                                <DiscreteObjectKeyFrame KeyTime="0" Value="True" />
-                                            </ObjectAnimationUsingKeyFrames>
-                                        </Storyboard>
-                                    </VisualState>
-                                </VisualStateGroup>
-                            </VisualStateManager.VisualStateGroups>
-                            <ContentPresenter x:Name="ContentPresenter"
-                          BorderBrush="{TemplateBinding BorderBrush}"
-                          BorderThickness="{TemplateBinding BorderThickness}"
-                          Content="{TemplateBinding Content}"
-                          ContentTransitions="{TemplateBinding ContentTransitions}"
-                          ContentTemplate="{TemplateBinding ContentTemplate}"
-                          Padding="{TemplateBinding Padding}"
-                          HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                          VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                          AutomationProperties.AccessibilityView="Raw"/>
-                            <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" Height="{TemplateBinding Height}" Width="{TemplateBinding Height}">
-                                <ProgressRing x:Name="ProgressRing" Margin="8"/>
-                            </Viewbox>
-                        </Grid>
+                    <ControlTemplate TargetType="FlyoutPresenter">
+                        <Border Background="{TemplateBinding Background}"
+              BorderBrush="Black"
+              BorderThickness="3">
+                            <ScrollViewer x:Name="ScrollViewer"
+            ZoomMode="{TemplateBinding ScrollViewer.ZoomMode}"
+            HorizontalScrollMode="{TemplateBinding ScrollViewer.HorizontalScrollMode}"
+            HorizontalScrollBarVisibility="{TemplateBinding ScrollViewer.HorizontalScrollBarVisibility}"
+            VerticalScrollMode="{TemplateBinding ScrollViewer.VerticalScrollMode}"
+            VerticalScrollBarVisibility="{TemplateBinding ScrollViewer.VerticalScrollBarVisibility}"
+            AutomationProperties.AccessibilityView="Raw">
+                                <ContentPresenter Content="{TemplateBinding Content}"
+                            ContentTemplate="{TemplateBinding ContentTemplate}"
+                            ContentTransitions="{TemplateBinding ContentTransitions}"
+                            Margin="{TemplateBinding Padding}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </ScrollViewer>
+                        </Border>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </Page.Resources>
 
-    <Grid>
-        <!--<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="14*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="256" x:Name="abc"/>
-                <ColumnDefinition Width="3*"/>
-            </Grid.ColumnDefinitions>
-            <views:HeaderView Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
-            <views:MainContainerView Grid.Row="1" Grid.Column="1"/>
-        </Grid>
-        <views:ClientPanelView Width="256" HorizontalAlignment="Left">
-            <i:Interaction.Behaviors>
-                <b:ClientPanelViewSlideBehavior MinWidth="256" MaxWidth="400"/>
-            </i:Interaction.Behaviors>
-        </views:ClientPanelView>-->
-
-        <Button Content="Click Me" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="40" Style="{StaticResource myButtonStyle}"
-                IsEnabled="{Binding ElementName=cb, Path=IsChecked, Mode=OneWay}"/>
-        <CheckBox x:Name="cb" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+    <Grid Background="LightGreen">
+        <StackPanel>
+            <Button Content="Show Popup (using Offset)" Click="ShowPopupOffsetClicked"/>
+        </StackPanel>
+        <Popup x:Name="StandardPopup">
+            <!--<Grid HorizontalAlignment="Stretch" x:Name="grid">
+                <Border BorderThickness="2" Background="White" BorderBrush="White">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <TextBlock Text="Simple Popup" FontSize="24" HorizontalAlignment="Center"/>
+                        <Button Content="Close" Click="ClosePopupClicked" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+            </Grid>-->
+            <Grid x:Name="grid">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="175"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Background="LightGray">
+                    
+                </Grid>
+                <Grid Grid.Row="1">
+                    <WebView x:Name="webView" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                </Grid>
+            </Grid>
+        </Popup>
     </Grid>
 </Page>
