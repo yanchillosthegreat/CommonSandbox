@@ -90,17 +90,24 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Assets\M.Video_light.otf" />
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\AmazingControl.xaml.cs">
+      <DependentUpon>AmazingControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Controls\PolymorphControl.cs" />
+    <Compile Include="Controls\UniformGrid.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Credential.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VisualTreeHelperExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -109,6 +116,15 @@
     <None Include="SharedViewModelApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\aIcon.png" />
+    <Content Include="Assets\Icons\156x156.png" />
+    <Content Include="Assets\Icons\filterIcon.png" />
+    <Content Include="Assets\Icons\pinDark.png" />
+    <Content Include="Assets\invalid-name%402x.png" />
+    <Content Include="Assets\invalid-name%403x.png" />
+    <Content Include="Assets\invalid-name.png" />
+    <Content Include="Assets\smallLeftArrow.png" />
+    <Content Include="Assets\smallRightArrow.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -123,6 +139,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Controls\AmazingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

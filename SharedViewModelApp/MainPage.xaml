@@ -4,6 +4,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:controls="using:SharedViewModelApp.Controls">
     <Grid>
-        <controls:PolymorphControl Background="Red" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <controls:AmazingControl VerticalAlignment="Top"/>
     </Grid>
 </Page>

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +26,14 @@ namespace SharedViewModelApp
         public MainPage()
         {
             this.InitializeComponent();
+
+            var list = new List<object>();
+            for (int i = 0; i < 100; i++)
+            {
+                list.Add(new object());
+            }
+
+            this.DataContext = list;
         }
     }
 }
