@@ -1,4 +1,4 @@
-﻿using CommonSandbox.Views;
+﻿using CommonSandbox.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,23 +26,25 @@ namespace CommonSandbox
         public MainPage()
         {
             this.InitializeComponent();
-
-            double width = Window.Current.Bounds.Width;
-            double height = Window.Current.Bounds.Height;
-            grid.Width = width;
-            grid.Height = height;
-
-            webView.Navigate(new Uri(@"http://tehnosila.ru"));
-        }
-
-        private void ShowPopupOffsetClicked(object sender, RoutedEventArgs e)
-        {
-            if (!StandardPopup.IsOpen) { StandardPopup.IsOpen = true; }
-        }
-
-        private void ClosePopupClicked(object sender, RoutedEventArgs e)
-        {
-            if (StandardPopup.IsOpen) { StandardPopup.IsOpen = false; }
+            this.DataContext = new List<Сharacteristic>
+            {
+                new Сharacteristic {
+                    Name = "Экран",
+                    Params = new List<СharacteristicParam>
+                    {
+                        new СharacteristicParam { Name = "Диагональ", Value = "49''(124.5см)" },
+                        new СharacteristicParam { Name = "Формат", Value = "16:9" },
+                        new СharacteristicParam { Name = "Разрешение", Value = "3420x2160 Пикс(Ultra HD)" }
+                    }
+                },
+                new Сharacteristic {
+                    Name = "Поддержка 3D",
+                    Params = new List<СharacteristicParam>
+                    {
+                        new СharacteristicParam { Name = "", Value = "пассивная технология" }
+                    }
+                }
+            };
         }
     }
 }
