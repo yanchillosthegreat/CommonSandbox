@@ -25,6 +25,9 @@ namespace ArticleSandbox
         {
             this.InitializeComponent();
             ViewModel = new MainPageViewModel();
+
+            CheckBox a = new CheckBox();
+            a.IsChecked
         }
     }
 }

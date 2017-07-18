@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SharedViewModelApp.ViewModel
+namespace SharedViewModelApp.Models.Enums
 {
-    class SignInFlyoutViewModel
+    public enum FieldType
     {
+        FIO = 0,
+        Phone = 1,
+        Email = 2
     }
 }

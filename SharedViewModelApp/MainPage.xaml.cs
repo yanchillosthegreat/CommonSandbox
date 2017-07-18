@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SharedViewModelApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,47 +25,21 @@ namespace SharedViewModelApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public MainPageViewModel ViewModel { get; private set; } 
+
         public MainPage()
         {
             this.InitializeComponent();
+            this.DataContextChanged += MainPage_DataContextChanged;
+            this.DataContext = new MainPageViewModel();
         }
 
-        //private void ShowButton_Tapped(object sender, TappedRoutedEventArgs e)
-        //{
-        //    Storyboard sb = new Storyboard();
-        //    DoubleAnimation da = new DoubleAnimation
-        //    {
-        //        Duration = new Duration(new TimeSpan(0, 0, 0, 0, 350)),
-        //        From = 0,
-        //        To = 200,
-        //        EasingFunction = new ExponentialEase() { Exponent = 5 },
-        //        EnableDependentAnimation = true
-        //    };
-
-        //    Storyboard.SetTarget(da, ContentGrid);
-        //    Storyboard.SetTargetProperty(da, nameof(Height));
-
-        //    sb.Children.Add(da);
-        //    sb.Begin();
-        //}
-
-        //private void HideButton_Tapped(object sender, TappedRoutedEventArgs e)
-        //{
-        //    Storyboard sb = new Storyboard();
-        //    DoubleAnimation da = new DoubleAnimation
-        //    {
-        //        Duration = new Duration(new TimeSpan(0, 0, 0, 0, 350)),
-        //        From = 200,
-        //        To = 0,
-        //        EasingFunction = new ExponentialEase() { Exponent = 5 },
-        //        EnableDependentAnimation = true
-        //    };
-
-        //    Storyboard.SetTarget(da, ContentGrid);
-        //    Storyboard.SetTargetProperty(da, nameof(Height));
-
-        //    sb.Children.Add(da);
-        //    sb.Begin();
-        //}
+        private void MainPage_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
+        {
+            if (args.NewValue is MainPageViewModel viewModel)
+            {
+                ViewModel = viewModel;
+            }
+        }
     }
 }
