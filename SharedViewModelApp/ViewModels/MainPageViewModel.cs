@@ -17,6 +17,8 @@ namespace SharedViewModelApp.ViewModels
             this.PickUpTextBoxModels = new List<PickUpTextBoxModel>();
             this.PickUpTextBoxModels.Add(new PickUpTextBoxModel("Фамилия", "Иванов", true, FieldType.FIO));
             this.PickUpTextBoxModels.Add(new PickUpTextBoxModel("Отчество", "Иванович", false, FieldType.FIO));
+            this.PickUpTextBoxModels.Add(new PickUpTextBoxModel("Телефон", "+79831045403", true, FieldType.Phone));
+            this.PickUpTextBoxModels.Add(new PickUpTextBoxModel("E-mail", "example@example.ru", false, FieldType.Email));
         }
     }
 }

@@ -1,0 +1,11 @@
+﻿<Page
+    x:Class="YetAnotherSandboxProject.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <CheckBox x:Name="CheckBox1" Content="ABC"/>
+            <Rectangle x:Name="Rectangle" Fill="Red" Width="100" Height="100" x:Load="{x:Bind Not(CheckBox1.IsChecked), Mode=OneWay}"/>
+        </StackPanel>
+    </Grid>
+</Page>

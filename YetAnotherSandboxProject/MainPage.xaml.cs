@@ -1,12 +1,12 @@
-﻿using CommonSandbox.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
-using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -17,28 +17,21 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace CommonSandbox
+namespace YetAnotherSandboxProject
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        public MainPageViewModel ViewModel { get; private set; }
-
         public MainPage()
         {
             this.InitializeComponent();
-            this.DataContextChanged += MainPage_DataContextChanged;
-            this.DataContext = new MainPageViewModel();
         }
 
-        private void MainPage_DataContextChanged(FrameworkElement sender, DataContextChangedEventArgs args)
+        private bool Not(bool? value)
         {
-            if (args.NewValue is MainPageViewModel viewModel)
-            {
-                ViewModel = viewModel;
-            }
+            return value != true;
         }
     }
 }
